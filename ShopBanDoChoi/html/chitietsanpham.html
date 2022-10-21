@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Sản Phẩm</title>
+
+    <link rel="stylesheet" href="../css/chitietsanpham.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/chitietsanpham.js"></script>
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <header>
+            <nav>
+                <div class="img-nav">
+                    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: var(--primary-color);">
+                        <a class="navbar-brand" href="TrangChu.html"><img src="../img/ShopDoChoi_logo.png" alt=""></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">Trang Chủ<span class="sr-only"></span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="ThongTin.html">Thông Tin</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Sản Phẩm
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="TrangChu.html#DoChoiHocTap">Đồ Chơi Học Tập</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="TrangChu.html#DoChoiDieuKhien">Đồ Chơi Máy Bay,
+                                            Xe Điều
+                                            Khiển</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="TrangChu.html#DoChoiTheThao">Đồ Chơi Thể Thao</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="TrangChu.html#DoChoiLapRap">Đồ Chơi Lắp Ráp</a>
+                                    </div>
+                                </li>
+                            </ul>
+                            <form class="form-inline my-2 my-lg-0">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm tại đây.."
+                                    aria-label="Search">
+                                <button class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit"><i
+                                        class="fas fa-search"></i></button>
+                            </form>
+                            <div>
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item" id="taikhoan">
+                                        <a class="nav-link" href="#">Đăng ký / Đăng nhập<br><i class="fa fa-user"></i>
+                                            Tài khoản</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link my-2" href="GioHang.html"><i
+                                                class="fa fa-shopping-cart"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </nav>
+        </header>
+
+        <section class="chitietsanpham mt-lg-4">
+            <div class="container p-4" style="background-color: var(--secondary-color);">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="mb-sm-4">
+                            <div id="ha"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 border-left">
+                        <h3 id="tensp"></h3>
+                        <p><strong>100%</strong> hàng <strong>Chất lượng</strong>, đảm bảo <strong>Uy tín</strong>!</p>
+                        <div class="dongia row"><span class="mr-sm-2">₫</span>
+                            <div id="dongia"></div>
+                        </div>
+                        <div class="row">
+                            <div class="soluong col-lg-4 col-md-4">
+                                <label for="soluong">Số lượng:</label>
+                                <div class="input-group">
+                                    <button type="button" class="btn quantity-left-minus" data-type="minus"
+                                        data-field="">
+                                        <i class="fa fa-minus" aria-hidden="true"></i>
+                                    </button>
+                                    <input type="text" id="quantity" name="quantity"
+                                        class="px-2 text-center form-control input-number" value="1" min="1" max="100">
+                                    <button type="button" class="btn quantity-right-plus" data-type="plus"
+                                        data-field="">
+                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <div class="soluongcosan my-sm-3">
+                                    <span id="soluong"></span><span> sản phẩm có sẵn</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="action mt-lg-2">
+                            <button class="add-to-cart btn btn-default mb-sm-2" type="button">
+                                <a href="datmua.html" style="text-decoration: none; color: black"><i
+                                        class="fa fa-cart-plus" aria-hidden="true"></i> ĐẶT MUA</a>
+                            </button>
+                        </div>
+                        <div class="row align-items-center chiase mt-md-2">
+                            <span>Chia sẽ:</span>
+
+                            <li class="chiase__item"><i class='social__icon fab fa-facebook'></i></li>
+                            <li class="chiase__item"><i class='social__icon fab fa-twitter'></i></li>
+                            <li class="chiase__item"><i class='social__icon fab fa-linkedin'></i></li>
+                            <li class="chiase__item"><i class='social__icon fab fa-instagram'></i></li>
+                            <li class="chiase__item"><i class='social__icon fab fa-pinterest'></i></li>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="motasanpham">
+                        <h4>Mô tả sản phẩm</h4>
+                        <p id="mota">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center text-lg-start bg-light text-muted mt-lg-3">
+            <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+                <!-- Left -->
+                <div class="me-5 d-none d-lg-block">
+                    <span>Kết nối với chúng tôi trên mạng xã hội:</span>
+                </div>
+                <!-- Left -->
+
+                <!-- Right -->
+                <div>
+                    <a href="" class="icon-network me-4 mr-sm-2 text-reset">
+                        <i class="icon-social fab fa-facebook-f"></i>
+                    </a>
+                    <a href="" class="icon-network me-4 mr-sm-2 text-reset">
+                        <i class="icon-social fab fa-twitter"></i>
+                    </a>
+                    <a href="" class="icon-network me-4 mr-sm-2 text-reset">
+                        <i class="icon-social fab fa-google"></i>
+                    </a>
+                    <a href="" class="icon-network me-4 mr-sm-2 text-reset">
+                        <i class="icon-social fab fa-instagram"></i>
+                    </a>
+                    <a href="" class="icon-network me-4 mr-sm-2 text-reset">
+                        <i class="icon-social fab fa-linkedin"></i>
+                    </a>
+                    <a href="" class="icon-network me-4 mr-sm-2 text-reset">
+                        <i class="icon-social fab fa-github"></i>
+                    </a>
+                </div>
+                <!-- Right -->
+            </section>
+            <!-- Section: Social media -->
+
+            <!-- Section: Links  -->
+            <section class="">
+                <div class="container text-center text-md-start mt-5">
+                    <!-- Grid row -->
+                    <div class="row mt-3">
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                            <!-- Content -->
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                <i class="fas fa-gem me-3"></i>SHOP ĐỒ CHƠI
+                            </h6>
+                            <p>
+                                Đồ chơi trẻ em là nhu cầu thiết yếu cho trẻ sơ sinh, trẻ mới biết đi, trẻ mầm non,
+                                và trẻ em tuổi đi học. Trẻ em cần rất nhiều cơ hội để chơi với nhiều loại đồ chơi
+                                tốt để sử dụng trí tưởng tượng của trẻ.
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                SẢN PHẨM
+                            </h6>
+                            <p>
+                                <a href="#DoChoiHocTap" class="inf-usefull text-reset">Đồ chơi học tập</a>
+                            </p>
+                            <p>
+                                <a href="#DoChoiDieuKhien" class="inf-usefull text-reset">Đồ chơi xe điều khiển</a>
+                            </p>
+                            <p>
+                                <a href="#DoChoiTheThao" class="inf-usefull text-reset">Đồ chơi thể thao</a>
+                            </p>
+                            <p>
+                                <a href="#" class="inf-usefull text-reset">Toàn bộ sản phẩm</a>
+                            </p>
+                        </div>
+
+                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                LIÊN KẾT
+                            </h6>
+                            <p>
+                                <a href="#!" class="inf-usefull text-reset">Cài đặt</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="inf-usefull text-reset">Đơn hàng</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="inf-usefull text-reset">Help</a>
+                            </p>
+                        </div>
+
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                Contact
+                            </h6>
+                            <p><i class="fas fa-home me-3"></i>HCM - 12 Nguyễn Văn Bảo - Quận Gò Vấp</p>
+                            <p>
+                                <i class="fas fa-envelope me-3"></i>
+                                nguyenxuanan@gmail.com
+                            </p>
+                            <p><i class="fas fa-phone me-3"></i> 0334863567</p>
+                            <p><i class="fas fa-print me-3"></i> 0445974678</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Copyright -->
+            <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+                ©
+                <script>document.write(new Date().getFullYear());</script> Shop Đồ Chơi
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+    </div>
+
+    <div id="backtotop">
+        <i class="fa fa-arrow-circle-up"></i>
+        <script>
+            $(document).ready(function () {
+                $(window).scroll(function () {
+                    if ($(this).scrollTop()) {
+                        $('#backtotop').fadeIn()
+                    } else {
+                        $('#backtotop').fadeOut()
+                    }
+                })
+                $('#backtotop').click(function () {
+                    $('html, body').animate({
+                        scrollTop: 0
+                    }, 750)
+                })
+            })
+        </script>
+    </div>
+
+</body>
+
+</html>
